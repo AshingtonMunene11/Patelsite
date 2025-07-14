@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #1a2e35;
+    --secondary: #2c9e6a;
+    --accent: #f8c537;
+    --dark: #0f1d21;
+    --light: #f8f9fa;
+    --highlight-bg: #00008B; /* Added for dark blue section */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+.odd-btn {
+    transition: all 0.2s;
+}
+
+.odd-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.active-tab {
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bet-slip-item {
+    border-left: 3px solid var(--secondary);
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header-dark {
+    background-color: #00008B; /* True dark blue */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ✅ Highlighted section with dark blue background */
+.highlight-section {
+    background-color: var(--highlight-bg);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    aside {
+        width: 100% !important;
+        position: static !important;
+    }
+
+    .betting-area {
+        order: 1;
+    }
+
+    .categories-sidebar {
+        order: 2;
+    }
+
+    .bet-slip-sidebar {
+        order: 3;
+    }
+
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+
+    .odd-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    /* Ensure the highlight section is mobile-friendly */
+    .highlight-section {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
